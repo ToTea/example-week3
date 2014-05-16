@@ -17,6 +17,14 @@
     <div class="update">
       <a href="/post/update/<%= post.id %>">update this</a>
     </div>
+    <div class="destory">
+      <form action="/post/<%= post.id %>" method="POST">
+        <input type="hidden" name="_method" value="delete" />
+        <div class="row">
+          <input type="submit" name="submit-btn" value="Destroy this">
+        </div>
+      </form>
+    </div>
     <div class="updateDate">
       <%= post.updatedAt %>
     </div>
