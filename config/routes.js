@@ -62,6 +62,11 @@ module.exports.routes = {
     action: "update"
   },
 
+  "DELETE /post/:id": {
+    controller: "post",
+    action: "destroy"
+  },
+
   "GET /:controller/:action/:id?": {},
 
   /*

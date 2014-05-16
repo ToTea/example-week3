@@ -48,11 +48,19 @@ module.exports = {
    *    `/post/destroy`
    */
    destroy: function (req, res) {
+    var id = req.param("id");
 
-    // Send a JSON response
-    return res.json({
-      hello: 'world'
-    });
+    // destroy post
+    Post.destroy({
+      id: id
+    })
+    .done(function (err, post) {
+      if (err) {
+        req.flash("info", "info: you point to wrong number");
+        return res.redirect("/");
+      }
+      return res.redirect("/");
+      })
   },
 
    updatePage: function (req, res) {
